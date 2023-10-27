@@ -33,7 +33,6 @@ import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.LocalContext
-import androidx.compose.ui.res.dimensionResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.input.KeyboardType
 import androidx.compose.ui.tooling.preview.Preview
@@ -84,6 +83,7 @@ fun SelectJK(
     }
 }
 
+
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun TampilForm(cobaViewModel: CobaViewModel = viewModel()){
@@ -125,6 +125,11 @@ fun TampilForm(cobaViewModel: CobaViewModel = viewModel()){
         onValueChange = {
             textEml = it
         })
+
+    SelectJK(options = jenis.map { id -> context.resources.getString(id) },
+        oneSelectionChanged = { cobaViewModel.setJenisK(it) })
+
+
     OutlinedTextField(value = textAmt,
         singleLine = true,
         shape = MaterialTheme.shapes.large,
@@ -133,11 +138,9 @@ fun TampilForm(cobaViewModel: CobaViewModel = viewModel()){
         onValueChange = {
             textAmt = it
         })
-    SelectJK(options = jenis.map { id -> context.resources.getString(id) },
-        oneSelectionChanged = { cobaViewModel.setJenisK(it) })
 
     Button(modifier = Modifier.fillMaxWidth(), onClick = {
-        cobaViewModel.insertData(textNama, textTlp, textEml, textAmt)
+        cobaViewModel.insertData(textNama, textTlp, textEml, textAmt, dataForm.sex)
     }) {
         Text(
             text = stringResource(R.string.submit), fontSize = 16.sp

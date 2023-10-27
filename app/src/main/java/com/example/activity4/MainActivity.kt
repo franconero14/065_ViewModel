@@ -151,8 +151,8 @@ fun TampilForm(cobaViewModel: CobaViewModel = viewModel()){
         namanya = cobaViewModel.namaUsr,
         telponnya = cobaViewModel.noTelp,
         emailnya = cobaViewModel.emailUsr,
-        alamatnya = cobaViewModel.alamatUsr,
-        jenisnya = cobaViewModel.jenisKl
+        jenisnya = cobaViewModel.jenisKl,
+        alamatnya = cobaViewModel.alamatUsr
     )
 }
 
@@ -177,11 +177,11 @@ fun TextHasil(namanya: String, telponnya: String, emailnya: String, alamatnya: S
             modifier = Modifier.padding(horizontal = 10.dp, vertical = 5.dp)
         )
         Text(
-            text = "Alamat :" + alamatnya,
+            text = "Jenis kelamin : " + jenisnya,
             modifier = Modifier.padding(horizontal = 10.dp, vertical = 5.dp)
         )
         Text(
-            text = "Jenis kelamin : " + jenisnya,
+            text = "Alamat :" + alamatnya,
             modifier = Modifier.padding(horizontal = 10.dp, vertical = 5.dp)
         )
     }

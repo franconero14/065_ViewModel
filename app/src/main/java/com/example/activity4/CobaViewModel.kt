@@ -14,7 +14,9 @@ class CobaViewModel: ViewModel() {
         private set
     var noTelp: String by mutableStateOf("")
         private set
-    var almatUsr: String by mutableStateOf("")
+    var emailUsr: String by mutableStateOf("")
+        private set
+    var alamatUsr: String by mutableStateOf("")
         private set
     var jenisKl: String by mutableStateOf("")
         private set
@@ -24,7 +26,7 @@ class CobaViewModel: ViewModel() {
     fun insertData(nm: String, tlp: String,amt: String, jk: String) {
         namaUsr = nm;
         noTelp = tlp;
-        almatUsr = amt;
+        emailUsr = amt;
         jenisKl = jk;
     }
 

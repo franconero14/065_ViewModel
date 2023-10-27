@@ -3,4 +3,6 @@
     <string name="laki">Laki-Laki</string>
     <string name="wanita">Perempuan</string>
     <string name="submit">Submit</string>
+    <string name="belum_menikah">Belum Menikah</string>
+    <string name="menikah">Menikah</string>
 </resources>
